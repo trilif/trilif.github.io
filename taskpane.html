@@ -92,7 +92,7 @@ loadProps();
     var item = Office.context.mailbox.item;
    
    
-     document.getElementById("subject").innerHTML=""+item.subject;
+     document.getElementById("subject").innerHTML=JSON.stringfy(item.subject)+"";
   }
 </script>
  
