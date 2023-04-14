@@ -34,17 +34,38 @@
 
 <script>
 
-   var messageBanner;
+  let item;
 
-  // The Office initialize function must be run each time a new page is loaded.
-  Office.initialize = function (reason) {
+Office.initialize = function () {
+    item = Office.context.mailbox.item;
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
-      var element = document.querySelector('.MessageBanner');
-      messageBanner = new components.MessageBanner(element);
-      messageBanner.hideBanner();
-      loadProps();
+        // After the DOM is loaded, app-specific code can run.
+        // Get the subject of the item being composed.
+        getSubject();
     });
-  };
+}
+
+// Get the subject of the item that the user is composing.
+function getSubject() {
+    item.subject.getAsync(
+        function (asyncResult) {
+            if (asyncResult.status == Office.AsyncResultStatus.Failed){
+                //write(asyncResult.error.message);
+              console.log(asyncResult.error.message);
+            }
+            else {
+                // Successfully got the subject, display it.
+               //write ('The subject is: ' + asyncResult.value);
+             console.log("" + asyncResult.value);
+            }
+        });
+}
+
+// Write to a div with id='message' on the page.
+function write(message){
+    document.getElementById('message').innerText += message; 
+}
 
     Office.onReady((info) => {
 
