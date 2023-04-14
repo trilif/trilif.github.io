@@ -34,7 +34,17 @@
 
 <script>
 
- 
+   var messageBanner;
+
+  // The Office initialize function must be run each time a new page is loaded.
+  Office.initialize = function (reason) {
+    $(document).ready(function () {
+      var element = document.querySelector('.MessageBanner');
+      messageBanner = new components.MessageBanner(element);
+      messageBanner.hideBanner();
+      loadProps();
+    });
+  };
 
     Office.onReady((info) => {
 
@@ -55,7 +65,7 @@
      */
 
     function sayHello() {
-loadProps();
+//loadProps();
         Office.context.mailbox.item.body.setAsync(
 
             "Hello MVM!",
