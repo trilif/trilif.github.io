@@ -58,6 +58,8 @@ function getSubject() {
                 // Successfully got the subject, display it.
                //write ('The subject is: ' + asyncResult.value);
              console.log("" + asyncResult.value);
+                  document.getElementById("subject").innerHTML="" + asyncResult.value;
+
             }
         });
 }
