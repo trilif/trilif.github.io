@@ -42,7 +42,7 @@ Office.initialize = function () {
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the subject of the item being composed.
-        getSubject();
+        //getSubject();
     });
 }
 
@@ -87,6 +87,7 @@ function write(message){
 
     function sayHello() {
 //loadProps();
+      getSubject();
         Office.context.mailbox.item.body.setAsync(
 
             "Hello MVM!",
