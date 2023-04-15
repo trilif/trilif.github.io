@@ -12,11 +12,312 @@
 
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 
+	<style>
+	body {font-family: Arial;
+
+background-color: #f0f0f0;}
+
+ 
+
+/* Style the tab */
+
+.tab {
+
+  overflow: hidden;
+
+  border: 1px solid #ccc;
+
+  background-color: #f1f1f1;
+
+  height:100%;
+
+}
+
+ 
+
+/* Style the buttons inside the tab */
+
+.tab button {
+
+  background-color: inherit;
+
+  float: left;
+
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  padding: 14px 16px;
+
+  transition: 0.3s;
+
+  font-size: 17px;
+
+}
+
+ 
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+
+  background-color: #4292c6;
+
+}
+
+ 
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+
+  background-color: #4292c6;
+
+}
+
+ 
+
+/* Style the tab content */
+
+.tabcontent {
+
+  display: none;
+
+  padding: 6px 12px;
+
+  border: 0px solid #ccc;
+
+  border-top: none;
+
+  height:70vw;
+
+
+}
+
+.tablinks{
+
+width:100%;
+
+ 
+
+}
+
+.tablinks2{
+
+width:10%;
+
+height:7vh;
+
+}
+
+#cp, #honnan{
+
+width:99%;
+
+text-align: left;
+
+font-size:16px;
+
+margin-left:0px;
+
+padding-left:0px;
+
+}
+
+#mikor{
+
+visibility:hidden;
+
+text-align: left;
+
+font-size:16px;
+
+margin-left:0px;
+
+padding-left:0px;
+
+}
+
+ 
+
+#honnan{
+
+visibility:hidden;
+
+}
+
+#megyek{
+
+position: absolute;
+
+bottom: 3%;
+
+right: 3%;
+
+}	
+	</style>
+	
 </head>
  
  
 
 <body>
+
+  <select name="cp" id="cp" onchange="myFunction()">
+
+  <option value="miskolc">Hova</option>
+
+  <option value="miskolc">Miskolcra</option>
+
+   <option value="miskolc">Koppányba</option>
+
+  <option value="szeged">Szegedre</option>
+
+  <option value="eger">Egerbe</option>
+
+  <option value="gyongyos">Gyöngyösre</option>
+
+</select>
+
+ 
+
+<select name="honnan" id="honnan" onchange="myFunction2()">
+
+<option value="miskolc">Honnan</option>
+
+  <option value="koppanybol">Koppányból</option>
+
+  <option value="szeged">Szegedről</option>
+
+  <option value="miskolcrol">Miskolcról</option>
+
+  <option value="eger">Egerből</option>
+
+  <option value="gyongyos">Gyöngyösről</option>
+
+</select>
+
+ 
+
+<select name="mikor" id="mikor" >
+
+<option value="miskolc">a héten?</option>
+
+  <option value="koppanybol">jövő héten?</option>
+
+
+</select>
+
+
+  
+
+  <br>
+
+  <br>
+
+<!-- <p>Naptár</p>-->
+
+  <table id="inftable" border="1px solid black" width="100%" style="background-color:white;visibility:hidden;border-collapse: collapse;">
+
+  <tr>
+
+  <td>dátum
+
+  </td>
+
+  <td>név
+
+  </td>
+
+  </tr>
+
+  <tr>
+
+  <td>2023.04.03.
+
+  </td>
+
+  <td><a id="mto" href="mailto:someone@example.com&subject=Megyvalaki%20valahova&body=Látom%20mész%20Miskolcra">hbalazs</a>
+
+  </td>
+
+  </tr>
+
+  </table>
+
+</div>
+
+<!--mailto:someone@example.com?cc=someoneelse@example.com&bcc=andsomeoneelse@example.com&subject=Summer%20Party&body=You%20are%20invited%20to%20a%20big%20summer%20party!-->
+
+<div id="Paris" class="tabcontent">
+
+  <h3>sfs</h3>
+
+  <p>Paris is the capital of France.</p>
+
+</div>
+
+ 
+
+ 
+
+<script>
+
+function openCity(evt, cityName) {
+
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+
+  for (i = 0; i < tabcontent.length; i++) {
+
+    tabcontent[i].style.display = "none";
+
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+
+  for (i = 0; i < tablinks.length; i++) {
+
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+  }
+
+  document.getElementById(cityName).style.display = "block";
+
+  evt.currentTarget.className += " active";
+
+}
+
+ 
+
+function myFunction() {
+
+  document.getElementById("honnan").style.visibility = "visible";
+
+ 
+
+}
+
+function myFunction2() {
+
+  document.getElementById("inftable").style.visibility = "visible";
+
+  document.getElementById("mikor").style.visibility = "visible";
+
+ 
+
+}
+
+ 
+
+document.getElementById("mto").href="mailto:someone@example.com&subject=Megyvalaki%20valahova&body=Látom%20mész%20Egerbe";
+
+//mailto:someone@example.com&subject=Megyvalaki%20valahova&body=Látom%20mész%20Miskolcra
+
+</script>
 
   
   
