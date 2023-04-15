@@ -5,6 +5,10 @@
 <html> 
  
 <head>
+ 
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
 <!-- Office JavaScript API -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -29,6 +33,9 @@
 </iframe><br><br>
  <iframe src="https://varosmajorifalevelek.hu/index.html" title="W3Schools Free Online Web Tutorials">
 </iframe>
+ 
+ <div id="map" style="width: 600px; height: 400px;"></div>
+ 
   <div id="subject">subj</div>
 </body>
 
@@ -131,6 +138,14 @@ function write(message){
      document.getElementById("subject").innerHTML=JSON.stringify(item.subject)+"";
    console.log(JSON.stringify(item.subject)+"");
   }
+ 
+ const map = L.map('map').setView([47.5, 19], 15);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+ 
 </script>
  
  
