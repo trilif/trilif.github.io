@@ -1,1 +1,55 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
 
+<!DOCTYPE html>
+ 
+<html> 
+ 
+<head>
+ 
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+<!-- Office JavaScript API -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+</head>
+
+ 
+
+<body>
+
+  
+  
+  
+  
+
+   
+
+
+  
+	  <div id="phpdb">phpdb</div>
+</body>
+
+ 
+
+<script>
+
+  
+	$.ajax({
+  type: "POST",
+  url: "https://varosmajorifalevelek.hu/hetivers/magyar.php",
+  datatype: "html",
+  success: function(response) {
+ 
+		$("#phpdb").html(response); 
+
+}
+});
+	
+</script>
+ 
+ 
+
+</html>
