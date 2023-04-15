@@ -167,11 +167,11 @@ right: 3%;
 
   <select name="cp" id="cp" onchange="myFunction()">
 
-  <option value="miskolc">Hova</option>
+  <option value="hova">Hova</option>
 
   <option value="miskolc">Miskolcra</option>
 
-   <option value="miskolc">Koppányba</option>
+   <option value="koppany">Koppányba</option>
 
   <option value="szeged">Szegedre</option>
 
@@ -185,13 +185,13 @@ right: 3%;
 
 <select name="honnan" id="honnan" onchange="myFunction2()">
 
-<option value="miskolc">Honnan</option>
+<option value="honnan">Honnan</option>
 
-  <option value="koppanybol">Koppányból</option>
+  <option value="koppany">Koppányból</option>
 
   <option value="szeged">Szegedről</option>
 
-  <option value="miskolcrol">Miskolcról</option>
+  <option value="miskolc">Miskolcról</option>
 
   <option value="eger">Egerből</option>
 
@@ -203,9 +203,9 @@ right: 3%;
 
 <select name="mikor" id="mikor" >
 
-<option value="miskolc">a héten?</option>
+<option value="0">a héten?</option>
 
-  <option value="koppanybol">jövő héten?</option>
+  <option value="1">jövő héten?</option>
 
 
 </select>
@@ -307,7 +307,7 @@ function myFunction2() {
 
   document.getElementById("mikor").style.visibility = "visible";
 
- 
+ getRes();
 
 }
 
@@ -335,7 +335,19 @@ document.getElementById("mto").href="mailto:someone@example.com&subject=Megyvala
 
 <script>
 
+  function getRes(){
+  	$.ajax({
+  type: "POST",
+  url: "https://varosmajorifalevelek.hu/megyvalaki/index.php",
+  datatype: "html",
+  success: function(response) {
+ 
+		$("#inftable").html(response); 
+
+}
+});
   
+  }
 	$.ajax({
   type: "POST",
   url: "https://varosmajorifalevelek.hu/hetivers/magyar.php",
