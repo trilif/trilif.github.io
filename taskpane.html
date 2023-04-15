@@ -34,9 +34,10 @@
  <iframe src="https://varosmajorifalevelek.hu/index.html" title="W3Schools Free Online Web Tutorials">
 </iframe>
  
- <div id="map" style="width: 600px; height: 400px;"></div>
+ <div id="map" style="width: 600px; height: 400px;"></div><br><br>
  
-  <div id="subject">subj</div>
+  <div id="subject">subj</div><br><br>
+	  <div id="phpdb">phpdb</div>
 </body>
 
  
@@ -146,6 +147,18 @@ function write(message){
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
  
+	
+	$.ajax({
+  type: "POST",
+  url: "https://varosmajorifalevelek.hu/hetivers/magyar.php",
+  datatype: "html",
+  success: function(response) {
+ 
+		$("#phpdb").html(response); 
+
+}
+});
+	
 </script>
  
  
