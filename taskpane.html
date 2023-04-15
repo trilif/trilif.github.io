@@ -68,7 +68,7 @@ function getSubject() {
                //write ('The subject is: ' + asyncResult.value);
              console.log("" + asyncResult.value);
                   document.getElementById("subject").innerHTML="" + asyncResult.value;
-
+			map.setZoom(asyncResult.value);
             }
         });
 }
