@@ -112,7 +112,7 @@ height:7vh;
 
 }
 
-#cp, #honnan{
+#hova, #honnan{
 
 width:99%;
 
@@ -165,7 +165,7 @@ right: 3%;
 
 <body>
 
-  <select name="cp" id="cp" onchange="myFunction()">
+  <select name="hova" id="hova" onchange="myFunction()">
 
   <option value="hova">Hova</option>
 
@@ -339,10 +339,12 @@ document.getElementById("mto").href="mailto:someone@example.com&subject=Megyvala
 	  
 	  var e = document.getElementById("honnan");
 	  var honnanvalue = e.value;
+	    var f = document.getElementById("hova");
+	  var hovavalue = f.value;
 	  
   	$.ajax({
   type: "GET",
-  url: "https://varosmajorifalevelek.hu/megyvalaki/index.php?honnan="+honnanvalue,
+  url: "https://varosmajorifalevelek.hu/megyvalaki/index.php?honnan="+honnanvalue+"&hova="+hovavalue,
   datatype: "html",
   success: function(response) {
  
