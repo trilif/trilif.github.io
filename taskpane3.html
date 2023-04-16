@@ -1,0 +1,54 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+
+<!DOCTYPE html>
+ 
+<html> 
+   
+<head>
+ 
+
+<!-- Office JavaScript API -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+	<style>
+
+	</style>
+	
+</head>
+ 
+ 
+
+<body>
+
+ <p id="koordz">koordz</p>
+  
+</body>
+
+ 
+
+<script>
+
+  function getRes(){
+	  
+	 
+	  
+  	$.ajax({
+  type: "GET",
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+130+"&kmko="+58+"&ap=m7&pkod=2",
+  datatype: "html",
+  success: function(response) {
+ 
+		$("#koordz").html(response); 
+
+}
+});
+  
+  }
+getRes();
+</script>
+ 
+ 
+
+</html>
