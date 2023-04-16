@@ -37,6 +37,21 @@
 
 function getSel(){	
 	
+	Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
+  if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+    const text = asyncResult.value.data;
+    const prop = asyncResult.value.sourceProperty;
+    console.log("Selected text in " + prop + ": " + text);
+	  $("#selectedt").html(text);
+  } else {
+    console.error(asyncResult.error);
+  }
+});
+	
+	
+	
+/*	
+	
 	Office.initialize = function () {
     Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
 };
@@ -48,6 +63,7 @@ function getCallback(asyncResult) {
     console.log("Selected text in " + prop + ": " + text);
 	$("#selectedt").html(text); 
 }
+*/
 }
   function getRes(){
 	  
