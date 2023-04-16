@@ -185,7 +185,7 @@ function getCallback(asyncResult) {
 var e = document.getElementById("apk");
 var ap = e.value;
 	  
-	  var pkod = document.getElementById('palya').value;
+	  var pkod = document.querySelector('input[name="palya"]:checked').value;
 	  
   	$.ajax({
   type: "GET",
