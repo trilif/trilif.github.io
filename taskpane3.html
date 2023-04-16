@@ -43,6 +43,10 @@ function getSel(){
     const prop = asyncResult.value.sourceProperty;
     console.log("Selected text in " + prop + ": " + text);
 	  $("#selectedt").html(text);
+	  var text2= text.replace(" ", "");
+	const selArray = text2.split("+");
+	getRes(selArray[0],selArray[1]);
+	  
   } else {
     console.error(asyncResult.error);
   }
@@ -62,9 +66,7 @@ function getCallback(asyncResult) {
 
     console.log("Selected text in " + prop + ": " + text);
 	$("#selectedt").html(text); 
-	text.replace(" ", "");
-	const selArray = text.split("+");
-	getRes(selArray[0],selArray[1]);
+	
 }
 */
 }
