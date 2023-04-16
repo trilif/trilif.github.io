@@ -62,16 +62,19 @@ function getCallback(asyncResult) {
 
     console.log("Selected text in " + prop + ": " + text);
 	$("#selectedt").html(text); 
+	text.replace(" ", "");
+	const selArray = text.split("+");
+	getRes(selArray[0],selArray[1]);
 }
 */
 }
-  function getRes(){
+  function getRes(kmko,dm){
 	  
 	 
 	  
   	$.ajax({
   type: "GET",
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+130+"&kmko="+58+"&ap=M7&pkod=2",
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap=M7&pkod=2",
   datatype: "html",
   success: function(response) {
  
@@ -81,7 +84,7 @@ function getCallback(asyncResult) {
 });
   
   }
-getRes();
+//getRes();
 </script>
  
  
