@@ -21,7 +21,7 @@
  
 
 <body>
-
+<button onclick="getSel()">Kijelölés begyűjtése</button><br><br>
  <p id="koordz">koordz</p>
 	 <p id="selectedt">selec</p>
   
@@ -37,6 +37,8 @@ Office.initialize = function () {
     Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
 };
 
+function getSel(){	
+	
 function getCallback(asyncResult) {
     const text = asyncResult.value.data;
     const prop = asyncResult.value.sourceProperty;
@@ -44,7 +46,7 @@ function getCallback(asyncResult) {
     console.log("Selected text in " + prop + ": " + text);
 	$("#selectedt").html(text); 
 }
-	
+}
   function getRes(){
 	  
 	 
