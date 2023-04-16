@@ -33,11 +33,13 @@
 
 	
 	// Get selected data.
-Office.initialize = function () {
-    Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
-};
+
 
 function getSel(){	
+	
+	Office.initialize = function () {
+    Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
+};
 	
 function getCallback(asyncResult) {
     const text = asyncResult.value.data;
