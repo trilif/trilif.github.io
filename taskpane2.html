@@ -336,9 +336,13 @@ document.getElementById("mto").href="mailto:someone@example.com&subject=Megyvala
 <script>
 
   function getRes(){
+	  
+	  var e = document.getElementById("honnan");
+	  var honnanvalue = e.value;
+	  
   	$.ajax({
-  type: "POST",
-  url: "https://varosmajorifalevelek.hu/megyvalaki/index.php",
+  type: "GET",
+  url: "https://varosmajorifalevelek.hu/megyvalaki/index.php?honnan="+honnanvalue,
   datatype: "html",
   success: function(response) {
  
