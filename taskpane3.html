@@ -23,6 +23,7 @@
 <body>
 
  <p id="koordz">koordz</p>
+	 <p id="selectedt">selec</p>
   
 </body>
 
@@ -30,6 +31,20 @@
 
 <script>
 
+	
+	// Get selected data.
+Office.initialize = function () {
+    Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
+};
+
+function getCallback(asyncResult) {
+    const text = asyncResult.value.data;
+    const prop = asyncResult.value.sourceProperty;
+
+    console.log("Selected text in " + prop + ": " + text);
+	$("#selectedt").html(text); 
+}
+	
   function getRes(){
 	  
 	 
