@@ -184,9 +184,11 @@ function getCallback(asyncResult) {
 var e = document.getElementById("apk");
 var ap = e.value;
 	  
+	  var pkod = document.getElementById('palya').value;
+	  
   	$.ajax({
   type: "GET",
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod=2",
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod="+pkod,
   datatype: "html",
   success: function(response) {
  
