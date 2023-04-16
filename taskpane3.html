@@ -78,11 +78,11 @@ max-height: 100%;
 		</td>
 		<td>
 			<select name="apk" id="apk">
-			  <option value="m1">M1</option>
-			  <option value="m3">M3</option>
-			  <option value="m4">M4</option>
-			  <option value="m7">M7</option>
-			  <option value="m8">M8</option>
+			  <option value="M1">M1</option>
+			  <option value="M3">M3</option>
+			  <option value="M4">M4</option>
+			  <option value="M7">M7</option>
+			  <option value="M8">M8</option>
 			</select>
 		</td>
 			<td>
@@ -122,7 +122,7 @@ max-height: 100%;
 
 const map = L.map('map').setView([47.5, 19], 13);
 
-const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+const tiles = L.tileLayer('https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png', {
 maxZoom: 19,
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
@@ -174,11 +174,12 @@ function getCallback(asyncResult) {
 }
   function getRes(kmko,dm){
 	  
-	 
+var e = document.getElementById("apk");
+var ap = e.value;
 	  
   	$.ajax({
   type: "GET",
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap=M7&pkod=2",
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod=2",
   datatype: "html",
   success: function(response) {
  
