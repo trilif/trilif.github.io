@@ -71,9 +71,30 @@ max-height: 100%;
  
 
 <body>
-<button onclick="getSel()">Kijelölés begyűjtése</button><br>
+	<table>
+		<tr>
+		<td>
+			<button onclick="getSel()">Kijelölés begyűjtése</button>
+		</td>
+		<td>
+			<select name="apk" id="apk">
+			  <option value="m1">M1</option>
+			  <option value="m3">M3</option>
+			  <option value="m4">M4</option>
+			  <option value="m7">M7</option>
+			  <option value="m8">M8</option>
+			</select>
+		</td>
+			<td>
+			<p id="selectedt">selec</p>
+			</td>
+	
+		</tr>	
+	</table>
+
+	
 <!-- <p id="koordz">koordz</p>-->
-	 <p id="selectedt">selec</p>
+	 
 	
 	<div class="tab">
   <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Térkép</button>
