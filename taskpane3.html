@@ -72,8 +72,8 @@ max-height: 100%;
 
 <body>
 <button onclick="getSel()">Kijelölés begyűjtése</button><br><br>
- <p id="koordz">koordz</p>
-	 <p id="selectedt">selec</p><br>
+<!-- <p id="koordz">koordz</p>-->
+	 <p id="selectedt">selec</p>
 	
 	<div class="tab">
   <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Térkép</button>
@@ -161,7 +161,7 @@ function getCallback(asyncResult) {
   datatype: "html",
   success: function(response) {
  
-		$("#koordz").html(response); 
+		//$("#koordz").html(response); 
 		var koordArr=response.split(";"); 
 		
 		addCoords(koordArr[1],koordArr[0]);
