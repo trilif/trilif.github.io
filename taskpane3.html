@@ -141,7 +141,9 @@ L.marker([lat, lng]).addTo(map);
 map.flyTo([lat, lng],19);
 }	
 	
-	
+setTimeout(function () {
+   map.invalidateSize(true);
+}, 100);	
 	
 	// Get selected data.
 
