@@ -87,7 +87,8 @@ max-height: 100%;
 			</select>
 		</td>
 			<td>
-			<p id="selectedt">szelvény</p>
+			<input type="text" id="selectedt" name="selectedt" placeholder="szelvény">
+			<!--<p id="selectedt">szelvény</p>-->
 			</td>
 	<td><form>
 		 <input type="radio" id="bp" name="palya" value="1" checked="checked">
@@ -152,7 +153,7 @@ function getSel(){
     const text = asyncResult.value.data;
     const prop = asyncResult.value.sourceProperty;
     console.log("Selected text in " + prop + ": " + text);
-	  $("#selectedt").html(text);
+	  $("#selectedt").val(text);
 	  var text2= text.replace(" ", "");
 	const selArray = text2.split("+");
 	getRes(selArray[0],selArray[1]);
