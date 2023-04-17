@@ -23,7 +23,7 @@ height: 100%;
 margin: 0;
 }
 	
-	 #map {
+	 #map, #gsv {
 width:100%;
 height: 80vh;
 margin: 0;
@@ -121,7 +121,7 @@ margin: 0;
 
 <div id="Paris" class="tabcontent">
 	<div id="svifr">
- <iframe id ="gsv" width="100%" src="https://maps.google.com/maps?layer=c&amp;cbll=47.490641,19.0190559&amp;cbp=,0,0,0,0&amp;source=embed&amp;output=svembed" width="600" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+ <iframe id ="gsv" src="https://maps.google.com/maps?layer=c&amp;cbll=47.490641,19.0190559&amp;cbp=,0,0,0,0&amp;source=embed&amp;output=svembed" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 </div>
 
@@ -213,7 +213,7 @@ var ap = e.value;
 		var koordArr=response.split(";"); 
 		
 		addCoords(koordArr[1],koordArr[0]);
-	  document.getElementById('svifr').innerHTML = "<iframe id =\"gsv\" width=\"100%\" src=\"https://maps.google.com/maps?layer=c&amp;cbll="+koordArr[1]+","+koordArr[0]+"&amp;cbp=,0,0,0,0&amp;source=embed&amp;output=svembed\" width=\"600\" height=\"400px\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>";
+	  document.getElementById('svifr').innerHTML = "<iframe id =\"gsv\"  src=\"https://maps.google.com/maps?layer=c&amp;cbll="+koordArr[1]+","+koordArr[0]+"&amp;cbp=,0,0,0,0&amp;source=embed&amp;output=svembed\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>";
 }
 });
   
