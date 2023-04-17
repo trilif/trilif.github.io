@@ -111,12 +111,12 @@ margin: 0;
 </div>
 
 <div id="London" class="tabcontent">
-   <div id="map" style="width: 100%; height: 400px;"></div>
+   <div id="map" style="width: 100%; height: 100%;"></div>
 </div>
 
 <div id="Paris" class="tabcontent">
 	<div id="svifr">
- <iframe id ="gsv" width="100%" src="https://maps.google.com/maps?layer=c&amp;cbll=47.5,19&amp;cbp=,0,0,0,0&amp;source=embed&amp;output=svembed" width="600" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+ <iframe id ="gsv" width="100%" src="https://maps.google.com/maps?layer=c&amp;cbll=47.490687,19.019406&amp;cbp=,0,0,0,0&amp;source=embed&amp;output=svembed" width="600" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 </div>
 
@@ -129,7 +129,7 @@ margin: 0;
 
 <script>
 
-const map = L.map('map').setView([47.5, 19], 13);
+const map = L.map('map').setView([47.490687, 19.019406], 13);
 
 const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
 maxZoom: 19,
@@ -149,8 +149,14 @@ setTimeout(function () {
 
 
 function getSel(){	
+	var text = document.getElementById("selectedt").value;
 	
+	  //$("#selectedt").val(text);
+	  var text2= text.replace(" ", "");
+	const selArray = text2.split("+");
+	getRes(selArray[0],selArray[1]);
 	
+/*	
 	Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
     const text = asyncResult.value.data;
@@ -167,7 +173,7 @@ function getSel(){
   }
 });
 	
-	
+*/	
 	
 /*	
 	//vmi
