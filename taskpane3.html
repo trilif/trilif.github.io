@@ -150,6 +150,26 @@ setTimeout(function () {
 
 function getSel(){	
 	
+	
+		Office.initialize = function () {
+    Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, {}, getCallback);
+};
+	
+function getCallback(asyncResult) {
+    const text = asyncResult.value.data;
+    const prop = asyncResult.value.sourceProperty;
+
+    console.log("Selected text in " + prop + ": " + text);
+	//$("#selectedt").html(text); 
+	
+	  $("#selectedt").val(text);
+	  var text2= text.replace(" ", "");
+	const selArray = text2.split("+");
+	getRes(selArray[0],selArray[1]);
+	
+}
+	
+/*	
 	Office.context.mailbox.item.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
   if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
     const text = asyncResult.value.data;
@@ -166,7 +186,7 @@ function getSel(){
   }
 });
 	
-	
+*/	
 	
 /*	
 	//vmi
