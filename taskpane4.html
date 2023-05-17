@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-td{
-border: 1px solid black;
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  
+  width: 100%;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
 }
 </style>
 </head>
 <body>
-<table class="table table-bordered table-hover table-condensed">
-<thead><tr><th title="Field #1">Rövidítés/betűszó/kifejezés</th>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Keresés..." title="Type in a name">
+
+<table id="myTable" >
+  <tr class="header">
+<th title="Field #1">Rövidítés/betűszó/kifejezés</th>
 <th title="Field #2">jelentés</th>
-</tr></thead>
+</tr>
 <tbody><tr>
 <td>*ART</td>
 <td>alapvető rövidítések táblázata</td>
@@ -129,5 +164,27 @@ border: 1px solid black;
 <td> </td>
 </tr>
 </tbody></table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
 </body>
 </html>
