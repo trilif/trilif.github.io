@@ -26,7 +26,8 @@ function loadEntities() {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-      var beilleszt = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
+     // var beilleszt = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
+       var beilleszt = selectedMatches.mozaikszavak;
       $("#selected-match").text(beilleszt[0]);
       
       for(i=0;i<=rovidek.length;i++){
