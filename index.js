@@ -16,6 +16,7 @@ function loadEntities() {
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
       $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
+        $("#selected-match").text((selectedMatches.mozaikszavak[0]);
       if(selectedMatches.mozaikszavak[0]=="["){
        $("#selected-match").text("kabaré");
       
