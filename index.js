@@ -22,7 +22,7 @@ function loadEntities() {
   } else {
     $("#selected-match").text("Method not supported on your client");
   }
-/*
+
   // Get all matches
   var allMatches = Office.context.mailbox.item.getRegExMatches();
   if (allMatches) {
@@ -33,7 +33,7 @@ function loadEntities() {
   } else {
     $("#all-matches").text("All matches was null");
   }
-*/}
+}
 
 function showError(message) {
   $("#error-msg").text(message);
