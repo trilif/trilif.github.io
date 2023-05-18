@@ -32,17 +32,17 @@ function loadEntities() {
   } else {
     $("#selected-match").text("Method not supported on your client");
   } 
-/*
+
   // Get all matches
   var allMatches = Office.context.mailbox.item.getRegExMatches();
   if (allMatches) {
     // Note that the use of selectedMatches.mozaikszavak, where
     // OrderNumber corresponds to the RegExName attribute of the Rule element
     // in the manifest
-    $("#all-matches").text(JSON.stringify(allMatches.mozaikszavak, null, 2));
+   // $("#all-matches").text(JSON.stringify(allMatches.mozaikszavak, null, 2));
   } else {
-    $("#all-matches").text("All matches was null");
-  }*/
+   // $("#all-matches").text("All matches was null");
+  }
 }
 
 function showError(message) {
