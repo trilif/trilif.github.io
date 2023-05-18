@@ -7,6 +7,17 @@ Office.initialize = function(reason) {
   });
 }
 
+var rovidek = [  
+{  
+"rov":       "GIS",   
+"hossz":      "Geographic Information System"
+},
+{  
+"rov":       "WÉ",   
+"hossz":      "Welcome Émász"
+}  
+];
+
 function loadEntities() {
   // getSelectedRegExMatches is in preview, so need to test for it
   if (Office.context.mailbox.item.getSelectedRegExMatches !== undefined) {
@@ -15,7 +26,16 @@ function loadEntities() {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-      $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
+      var beilleszt = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
+      $("#selected-match").text(beilleszt[0]);
+      
+      for(i=0;i<=rovidek.length;i++){
+        if((rovidek[i].rov).equals(beilleszt[0])){
+         $("#selected-match").text(beilleszt[0]+"-"+rovidek[i].hossz);
+        
+        }
+      
+      }
     } else {
       $("#selected-match").text("Selected matches was null");
     }
