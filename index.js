@@ -18,6 +18,8 @@ function loadEntities() {
       $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
  if((JSON.stringify(selectedMatches.mozaikszavak)).includes("GIS")){
         $("#selected-match").text("Geographic Information System");
+ }else{
+  $("#selected-match").text("Geographic Information System?");
  }
       
       
