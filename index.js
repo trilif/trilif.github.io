@@ -12,7 +12,7 @@ function loadEntities() {
   if (Office.context.mailbox.item.getSelectedRegExMatches !== undefined) {
     var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
     if (selectedMatches) {
-      // Note that the use of selectedMatches.OrderNumber, where
+      // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
       $("#selected-match").text(JSON.stringify(selectedMatches.OrderNumber, null, 2));
@@ -26,7 +26,7 @@ function loadEntities() {
   // Get all matches
   var allMatches = Office.context.mailbox.item.getRegExMatches();
   if (allMatches) {
-    // Note that the use of selectedMatches.OrderNumber, where
+    // Note that the use of selectedMatches.mozaikszavak, where
     // OrderNumber corresponds to the RegExName attribute of the Rule element
     // in the manifest
     $("#all-matches").text(JSON.stringify(allMatches.OrderNumber, null, 2));
