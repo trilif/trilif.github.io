@@ -26,17 +26,17 @@ function loadEntities() {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     // var beilleszt = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
-       var beilleszt = selectedMatches.mozaikszavak;
-      $("#selected-match").text(beilleszt[0]);
-      
+     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
+       //var beilleszt = selectedMatches.mozaikszavak;
+     // $("#selected-match").text(beilleszt[0]);
+     /* 
       for(i=0;i<=rovidek.length;i++){
         if((rovidek[i].rov).equals(beilleszt[0])){
          $("#selected-match").text(beilleszt[0]+"-"+rovidek[i].hossz);
         
         }
       
-      }
+      }*/
     } else {
       $("#selected-match").text("Selected matches was null");
     }
