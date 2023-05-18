@@ -33,8 +33,8 @@ function loadEntities() {
   } else {
     $("#all-matches").text("All matches was null");
   }
-}
-*/
+*/}
+
 function showError(message) {
   $("#error-msg").text(message);
   $("#error").show();
