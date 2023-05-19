@@ -7,19 +7,43 @@ Office.initialize = function(reason) {
   });
 }
 
+var dictionary=[
+	{
+		key : "GIS",
+		value : "Geographical Information System"
+	},
+	{
+		key : "HMKE",
+		value : "Háztartási méretű kiserőmű"
+	}
+
+];
+
 function loadEntities() {
   // getSelectedRegExMatches is in preview, so need to test for it
+  
+  var bodyArray = (Office.context.mailbox.item.body).split(" ");
+  
+  var stringbuilderB = "";
+  for(i=0;i<=bodyArray.length;i++){
+	  
+	  stringbuilderB += stringbuilderB+bodyArray[i];
+	 
+  }
+   $("#selected-match").text(stringbuilderB);
+  
+  
   if (Office.context.mailbox.item.getSelectedRegExMatches !== undefined) {
     var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
     if (selectedMatches) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-      $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
+      /////$("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
  if((JSON.stringify(selectedMatches.mozaikszavak, null, 2)).includes("GIS")){
-        $("#selected-match").text("Geographic Information System");
+       // $("#selected-match").text("Geographic Information System");
  }else{
-  $("#selected-match").text("Geographic Information System?");
+  ////////$("#selected-match").text("Geographic Information System?");
  }
       
       
