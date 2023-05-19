@@ -23,7 +23,7 @@ function loadEntities() {
   // getSelectedRegExMatches is in preview, so need to test for it
   
  // var bodyArray = (Office.context.mailbox.item.body).split(" ");
- console.log(Office.context.mailbox.item.body+"");
+ console.log(JSON.stringify(Office.context.mailbox.item.body));
   /*
   var stringbuilderB = "";
   for(i=0;i<=bodyArray.length;i++){
