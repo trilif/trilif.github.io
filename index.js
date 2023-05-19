@@ -22,17 +22,16 @@ var dictionary=[
 function loadEntities() {
   // getSelectedRegExMatches is in preview, so need to test for it
   
-     let bodyObject = {};
-Office.context.mailbox.item.body.getAsync(
-  "text",
-  function (result) {
-    if (result.status === Office.AsyncResultStatus.Succeeded) {
-      bodyObject.body = result.value;
-      
-    }
-  }
-)
-console.log(bodyObject.body);
+    var body = Office.context.mailbox.item.body;
+// Get the body asynchronous as text
+body.getAsync(Office.CoercionType.Text, function (asyncResult) {
+   if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        console.log("errorak00");
+   } else {
+      console.log(body);
+   }
+});
+
   
   
  // var bodyArray = (Office.context.mailbox.item.body).split(" ");
