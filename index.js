@@ -22,8 +22,9 @@ var dictionary=[
 function loadEntities() {
   // getSelectedRegExMatches is in preview, so need to test for it
   
-  var bodyArray = (Office.context.mailbox.item.body).split(" ");
-  
+ // var bodyArray = (Office.context.mailbox.item.body).split(" ");
+ console.log(Office.context.mailbox.item.body+"");
+  /*
   var stringbuilderB = "";
   for(i=0;i<=bodyArray.length;i++){
 	  
@@ -31,7 +32,7 @@ function loadEntities() {
 	 
   }
    $("#selected-match").text(stringbuilderB);
-  
+  */
   
   if (Office.context.mailbox.item.getSelectedRegExMatches !== undefined) {
     var selectedMatches = Office.context.mailbox.item.getSelectedRegExMatches();
