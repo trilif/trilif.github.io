@@ -28,7 +28,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
         console.log("errorak00");
    } else {
-      console.log(body);
+      console.log(asyncResult.value+"");
    }
 });
 
