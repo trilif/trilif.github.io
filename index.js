@@ -22,8 +22,21 @@ var dictionary=[
 function loadEntities() {
   // getSelectedRegExMatches is in preview, so need to test for it
   
+     let bodyObject = {};
+Office.context.mailbox.item.body.getAsync(
+  "text",
+  function (result) {
+    if (result.status === Office.AsyncResultStatus.Succeeded) {
+      bodyObject.body = result.value;
+      
+    }
+  }
+)
+console.log(bodyObject.body);
+  
+  
  // var bodyArray = (Office.context.mailbox.item.body).split(" ");
- console.log(JSON.stringify(Office.context.mailbox.item.body));
+ //console.log(JSON.stringify(Office.context.mailbox.item.body));
   /*
   var stringbuilderB = "";
   for(i=0;i<=bodyArray.length;i++){
