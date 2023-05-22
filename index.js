@@ -13,7 +13,7 @@ var dictionary=[
 		value : "Geographical Information System"
 	},
 	{
-		key : "HMKE",
+		key : "HMKEl",
 		value : "Háztartási méretű kiserőmű"
 	}
 
