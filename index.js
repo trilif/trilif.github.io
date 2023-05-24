@@ -81,9 +81,9 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
     // Note that the use of selectedMatches.mozaikszavak, where
     // OrderNumber corresponds to the RegExName attribute of the Rule element
     // in the manifest
-    $("#all-matches").text(JSON.stringify(allMatches.mozaikszavak, null, 2));
+   ///////// $("#all-matches").text(JSON.stringify(allMatches.mozaikszavak, null, 2));
   } else {
-    $("#all-matches").text("All matches was null");
+   ////////// $("#all-matches").text("All matches was null");
   }
 }
 
