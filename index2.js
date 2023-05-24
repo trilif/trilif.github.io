@@ -4,7 +4,7 @@
 Office.initialize = function(reason) {
   $(document).ready(function(){
     loadEntities();
-	  const map = L.map('map').fitWorld();
+	  const map = L.map('map').setView([47.5, 19], 13);
 
 	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
@@ -60,6 +60,15 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
      $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
+	 
+	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
+	 var apstring = szelvenyString.split(" ");
+	 console.log(apstring[0]+" xxx "+apstring[1]);
+	 
+	 
+	 
+	 
+	 
 	     // $("#all-matches").html(" <iframe src=\"https://www.w3schools.com\" title=\"W3Schools Free Online Web Tutorials\"></iframe>");
  if((JSON.stringify(selectedMatches.mozaikszavak, null, 2)).includes("GIS")){
         $("#selected-match").text("Geographic Information System");
