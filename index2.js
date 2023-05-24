@@ -65,7 +65,9 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
 	 var apstring = szelvenyString.split(" ");
 	 var kavicsstring = (apstring[1]).split(encodeURIComponent('+'));
 	 
-	 L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
+	 //L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
+	 
+	 L.marker([47.5,19]).addTo(map);
 	 
 	 
 	 
