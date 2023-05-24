@@ -20,7 +20,7 @@ var dictionary=[
 		value : "Geographical Information System"
 	},
 	{
-		key : "HMKE",
+		key : "HMKEl",
 		value : "Háztartási méretű kiserőmű"
 	}
 
@@ -63,7 +63,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
 	 
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
-	 var kavicsstring = (apstring[1]).split("+");
+	 var kavicsstring = (apstring[1]).split(encodeURIComponent('+'));
 	 
 	 L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
 	 
