@@ -5,7 +5,7 @@ Office.initialize = function(reason) {
   $(document).ready(function(){
     loadEntities();
   });
-}
+} 
 
 var dictionary=[
 	{
