@@ -55,7 +55,12 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
      $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
  if((JSON.stringify(selectedMatches.mozaikszavak, null, 2)).includes("GIS")){
         $("#selected-match").text("Geographic Information System");
- }else{
+ } if((JSON.stringify(selectedMatches.mozaikszavak, null, 2)).includes("SAP")){
+        $("#selected-match").text("Systemanalyse und Programmentwicklung, aminek jelentése „rendszerelemzés és programfejlesztés. Az SAP a világ vezető integrált vállalatirányítási rendszere.");
+	    $("#all-matches").innerHTML("<a href=\"https://hu.wikipedia.org/wiki/SAP_AG\"">SAP wp Link</a>);
+ }
+	    
+	    else{
   ////////$("#selected-match").text("Geographic Information System?");
  }
       
