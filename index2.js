@@ -60,7 +60,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
      $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2));
-	      $("#all-matches").html(" <iframe src=\"https://www.w3schools.com\" title=\"W3Schools Free Online Web Tutorials\"></iframe>");
+	     // $("#all-matches").html(" <iframe src=\"https://www.w3schools.com\" title=\"W3Schools Free Online Web Tutorials\"></iframe>");
  if((JSON.stringify(selectedMatches.mozaikszavak, null, 2)).includes("GIS")){
         $("#selected-match").text("Geographic Information System");
  }else if((JSON.stringify(selectedMatches.mozaikszavak, null, 2)).includes("SAP")){
