@@ -4,7 +4,7 @@
 Office.initialize = function(reason) {
   $(document).ready(function(){
     loadEntities();
-	  const map = L.map('map').setView([47.5, 19], 13);
+	  const map = L.map('map',{zoomControl:false}).setView([47.5, 19], 13);
 
 	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
@@ -63,7 +63,9 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
 	 
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
-	 console.log(apstring[0]+" xxx "+apstring[1]);
+	 var kavicsstring = (apstring[1]).split("+");
+	 
+	 L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
 	 
 	 
 	 
