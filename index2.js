@@ -27,16 +27,17 @@ function addM(ap){
 	}).addTo(map);
 	
 	var okString = $("#teszter").text();
-	okString = okString.substring(2);
+	okString = okString.substring(3);
 	okString = okString.slice(0, -6);
 	//var apins = (ap+"").toUpperCase();
 	$("#teszter").text(okString);
 	
+	var insArray = okString.split(" ");
 	
 		$.ajax({
   type: "GET",
   //url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod="+pkod,
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap="+apins+"&pkod="+2,
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap="+(insArray[0]).toUpperCase()+"&pkod="+2,
   datatype: "html",
   success: function(response) {
  
