@@ -40,7 +40,7 @@ function addM(ap){
 		$.ajax({
   type: "GET",
   //url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod="+pkod,
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+insm+"&kmko="+inskm+"&ap="+(insArray[0]).toUpperCase()+"&pkod="+2,
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+insmeter+"&kmko="+inskm+"&ap="+(insArray[0]).toUpperCase()+"&pkod="+2,
   datatype: "html",
   success: function(response) {
  
@@ -109,7 +109,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAV");
+     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAW");
 	 
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
