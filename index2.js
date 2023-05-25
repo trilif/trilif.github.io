@@ -26,8 +26,7 @@ function addM(ap){
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-	var teszterString = $("#selected-match").text();
-	$("#teszter").text(teszterString+"");
+	
 	
 		$.ajax({
   type: "GET",
@@ -106,6 +105,9 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
 	 var kavicsstring = (apstring[1]).split(encodeURIComponent('+'));
+	 
+	 var teszterString = $("#selected-match").text();
+	$("#teszter").text(teszterString+"");
 	 
 	 //L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
 	 //addM(apstring[0]);
