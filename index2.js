@@ -47,8 +47,10 @@ function addM(ap){
 		//$("#koordz").html(response); 
 		var koordArr=response.split(";"); 
 		
-		var cma0 = L.circleMarker([47.5,19]).addTo(map);
+		//var cma0 = L.circleMarker([47.5,19]).addTo(map);
 		var cma = L.circleMarker([parseFloat(koordArr[1]),parseFloat(koordArr[0])]).addTo(map);
+		
+		map.setView([parseFloat(koordArr[1]),parseFloat(koordArr[0])], 13);
 		
 		//addCoords();
 		
@@ -109,7 +111,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAW");
+     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAX");
 	 
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
