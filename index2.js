@@ -26,7 +26,30 @@ function addM(){
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-	var cma = L.circleMarker([47.5,19]).addTo(map);
+	
+	
+		$.ajax({
+  type: "GET",
+  //url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod="+pkod,
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap=m7"+"&pkod="+2,
+  datatype: "html",
+  success: function(response) {
+ 
+		//$("#koordz").html(response); 
+		var koordArr=response.split(";"); 
+		
+		var cma = L.circleMarker([koordArr[1],koordArr[0]]).addTo(map);
+		
+		//addCoords();
+		
+	 // document.getElementById('svifr').innerHTML = "<iframe id =\"gsv\"  src=\"https://maps.google.com/maps?layer=c&amp;cbll="+koordArr[1]+","+koordArr[0]+"&amp;cbp=,0,0,0,0&amp;source=embed&amp;output=svembed\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>";
+}
+});
+	
+	
+	
+	
+	//var cma = L.circleMarker([47.5,19]).addTo(map);
 	//$("#all-matches").text("Gesdafsdafem");
 }
 
