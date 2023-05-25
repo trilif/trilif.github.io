@@ -111,7 +111,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
 	 
 	 //L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
 	 //addM(apstring[0]);
-	 addM(m7);
+	 addM('m7');
 	
 	 
 	 
