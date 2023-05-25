@@ -33,6 +33,9 @@ function addM(ap){
 	$("#teszter").text(okString);
 	
 	var insArray = okString.split(" ");
+	var kavicsArray = (insArray[1]).split("+");
+	var insmeter = kavicsArray[1];
+	var inskm = kavicsArray[0];
 	
 		$.ajax({
   type: "GET",
