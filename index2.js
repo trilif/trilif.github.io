@@ -32,7 +32,7 @@ function addM(ap){
 		$.ajax({
   type: "GET",
   //url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod="+pkod,
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap="+"m7"+"&pkod="+2,
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap="+"M7"+"&pkod="+2,
   datatype: "html",
   success: function(response) {
  
