@@ -27,7 +27,7 @@ function addM(ap){
 	}).addTo(map);
 	
 	var okString = $("#teszter").text();
-	okString = okString.substring(3);
+	okString = okString.substring(4);
 	okString = okString.slice(0, -6);
 	//var apins = (ap+"").toUpperCase();
 	$("#teszter").text(okString);
@@ -109,7 +109,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAS");
+     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAT");
 	 
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
