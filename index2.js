@@ -49,7 +49,7 @@ function addM(){
 		
 		//var cma0 = L.circleMarker([47.5,19]).addTo(map);
 		var cma = L.circleMarker([parseFloat(koordArr[1]),parseFloat(koordArr[0])]).addTo(map);
-		
+		cma.setStyle({color: 'black'});
 		map.setView([parseFloat(koordArr[1]),parseFloat(koordArr[0])], 13);
 		
 		//addCoords();
