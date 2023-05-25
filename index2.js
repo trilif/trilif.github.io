@@ -26,7 +26,7 @@ function addM(){
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-	//var cma = L.circleMarker([47.5,19]).addTo(map);
+	var cma = L.circleMarker([47.5,19]).addTo(map);
 	//$("#all-matches").text("Gesdafsdafem");
 }
 
