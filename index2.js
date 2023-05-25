@@ -7,20 +7,27 @@ Office.initialize = function(reason) {
     loadEntities();
 	 
 
-	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
+
 	  
   });
 } 
 
- const map = L.map('map',{zoomControl:false}).setView([47.5, 19], 13);
+
+
+ 
 
 
 function addM(){
+	
+	const map = L.map('map',{zoomControl:false}).setView([47.5, 19], 13);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+	
 	//var cma = L.circleMarker([47.5,19]).addTo(map);
-	 $("#all-matches").text("Gesdafsdafem");
+	//$("#all-matches").text("Gesdafsdafem");
 }
 
 
