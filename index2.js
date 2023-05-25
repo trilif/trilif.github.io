@@ -17,7 +17,7 @@ Office.initialize = function(reason) {
  
 
 
-function addM(ap){
+function addM(){
 	
 	const map = L.map('map',{zoomControl:false}).setView([47.5, 19], 13);
 
@@ -28,7 +28,7 @@ function addM(ap){
 	
 	var okString = $("#teszter").text();
 	okString = okString.substring(5);
-	okString = okString.slice(0, -6);
+	okString = okString.slice(0, -3);
 	//var apins = (ap+"").toUpperCase();
 	$("#teszter").text(okString);
 	
@@ -111,18 +111,19 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAX");
+     //$("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAX");
 	 
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
 	 var kavicsstring = (apstring[1]).split(encodeURIComponent('+'));
 	 
-	 var teszterString = $("#selected-match").text();
+	 //var teszterString = $("#selected-match").text();
+	 var teszterString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	$("#teszter").text(teszterString+"");
 	 
 	 //L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
 	 //addM(apstring[0]);
-	 addM("m7");
+	 addM();
 	
 	 
 	 
