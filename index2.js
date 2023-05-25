@@ -26,13 +26,13 @@ function addM(ap){
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-	$("#teszter").text(ap+"");
-	var apins = ap+"";
+	//$("#teszter").text(ap+"");
+	var apins = (ap+"").toUpperCase();
 	
 		$.ajax({
   type: "GET",
   //url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod="+pkod,
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap="+"M7"+"&pkod="+2,
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap="+apins+"&pkod="+2,
   datatype: "html",
   success: function(response) {
  
@@ -101,7 +101,7 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAQ");
+     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAR");
 	 
 	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
