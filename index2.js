@@ -26,8 +26,12 @@ function addM(ap){
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 	
-	//$("#teszter").text(ap+"");
-	var apins = (ap+"").toUpperCase();
+	var okString = $("#teszter").text();
+	okString = okString.substring(2);
+	okString = okString.slice(0, -6);
+	//var apins = (ap+"").toUpperCase();
+	$("#teszter").text(okString);
+	
 	
 		$.ajax({
   type: "GET",
