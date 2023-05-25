@@ -17,7 +17,7 @@ Office.initialize = function(reason) {
  
 
 
-function addM(){
+function addM(ap){
 	
 	const map = L.map('map',{zoomControl:false}).setView([47.5, 19], 13);
 
@@ -31,7 +31,7 @@ function addM(){
 		$.ajax({
   type: "GET",
   //url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+dm+"&kmko="+kmko+"&ap="+ap+"&pkod="+pkod,
-  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap=M7"+"&pkod="+2,
+  url: "https://varosmajorifalevelek.hu/mkif/index3.php?dm="+0+"&kmko="+100+"&ap="+ap+"&pkod="+2,
   datatype: "html",
   success: function(response) {
  
@@ -102,12 +102,12 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // in the manifest
      $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAK");
 	 
-	/* var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
+	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
 	 var kavicsstring = (apstring[1]).split(encodeURIComponent('+'));
-	 */
+	 
 	 //L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
-	 addM();
+	 addM(apstring[0]);
 	
 	 
 	 
