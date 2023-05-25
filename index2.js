@@ -59,12 +59,12 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAA");
+     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAB");
 	 
-	 var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
+	/* var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
 	 var kavicsstring = (apstring[1]).split(encodeURIComponent('+'));
-	 
+	 */
 	 //L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
 	 
 	 L.marker([47.5,19]).addTo(map);
