@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. see LICENSE in the project root for license information.
 "use strict";
- const map = L.map('map',{zoomControl:false}).setView([47.5, 19], 13);
+
  
 Office.initialize = function(reason) {
   $(document).ready(function(){
@@ -14,6 +14,15 @@ Office.initialize = function(reason) {
 	  
   });
 } 
+
+ const map = L.map('map',{zoomControl:false}).setView([47.5, 19], 13);
+
+
+function addM(){
+	var cma = L.circleMarker([47.5,19]).addTo(map);
+	
+}
+
 
 var dictionary=[
 	{
@@ -60,15 +69,15 @@ body.getAsync(Office.CoercionType.Text, function (asyncResult) {
       // Note that the use of selectedMatches.mozaikszavak, where
       // OrderNumber corresponds to the RegExName attribute of the Rule element
       // in the manifest
-     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAE");
+     $("#selected-match").text(JSON.stringify(selectedMatches.mozaikszavak, null, 2)+"AAF");
 	 
 	/* var szelvenyString = JSON.stringify(selectedMatches.mozaikszavak, null, 2);
 	 var apstring = szelvenyString.split(" ");
 	 var kavicsstring = (apstring[1]).split(encodeURIComponent('+'));
 	 */
 	 //L.marker([kavicsstring[0],kavicsstring[1]]).addTo(map);
-	 
-	//var cma = L.circleMarker([47.5,19]).addTo(map);
+	 addM();
+	
 	 
 	 
 	 
